@@ -1,0 +1,41 @@
+:root {
+    --pri-bg-color: #444444;
+    --sec-bg-color: #000000;
+    --op-bg-color: rgba(0, 0, 0, 0.5);
+    --pri-txt-color: #FFFFFF;
+    --pri-btn-color: #D63537;
+    --pri-btntxt-color: #000000;
+    --sec-btntxt-color: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+header.header {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-family: Rockwell, sans-serif;
+    color: var(--pri-btn-color);
+    font-weight: 900;
+}
+
+.pure-button-primary {
+    border-radius: 1rem;
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+}
