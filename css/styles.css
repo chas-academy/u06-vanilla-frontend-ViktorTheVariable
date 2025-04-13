@@ -12,7 +12,7 @@ html {
     font-size: 16px;
 }
 
-header.header {
+header.myHeader {
     background-image: url(../images/header.jpg);
     background-size: cover;
     background-position: center 70%;
@@ -27,6 +27,10 @@ h1.title {
     font-family: Rockwell, sans-serif;
     color: var(--pri-btn-color);
     font-weight: 900;
+}
+
+.myMain {
+    background-color: var(--pri-bg-color) !important;
 }
 
 .myFooter {
@@ -55,7 +59,11 @@ h1.title {
     background-color: var(--pri-btn-color);
     color: var(--pri-txt-color);
     border-radius: 6rem;
-    padding: 0.3rem 1.5rem;
+    padding: 0.3rem 1rem;
+}
+
+.is-danger {
+    background-color: var(--pri-btn-color) !important;
 }
 
 .footer {
