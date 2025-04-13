@@ -8,34 +8,44 @@
     --sec-btntxt-color: #FFFFFF;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 html {
     font-size: 16px;
 }
 
 header.header {
+    background-image: url(images/header.jpg);
+    background-size: cover;
+    background-position: center 70%;
+    background-repeat: no-repeat;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 0.9rem;
-    flex-direction: column;
-    background-image: url();
 }
 
-h1 {
+h1.title {
     margin: 0;
     font-family: Rockwell, sans-serif;
     color: var(--pri-btn-color);
     font-weight: 900;
 }
 
-.pure-button-primary {
-    border-radius: 1rem;
-    padding: 0.3rem 1rem;
-    cursor: pointer;
+
+/* bulma classes */
+
+.subtitle {
+    display: inline-block;
+    font-family: Rockwell, sans-serif;
+    color: var(--pri-txt-color);
+    background-color: var(--op-bg-color);
+    margin: 0.5rem 0;
+    padding: 0.3rem 0.5rem;
 }
+
+.is-primary {
+    background-color: var(--pri-btn-color);
+    color: var(--pri-txt-color);
+    border-radius: 6rem;
+    padding: 0.3rem 1.5rem;
+}
+
+/* bulma classes */
