@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/bulma.min.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/all-movies.css">
-    <script src="index.js" defer></script>
+    <script src="../js/index.js" defer></script>
 </head>
 <body>
 <header class="myHeader">
@@ -21,23 +21,11 @@
     </div>
 </header>
 
-<main class="myMain has-text-centered">
-    <h1 class="myMain-title mt-5 px-5 is-size-1-desktop is-size-2-tablet is-size-3-mobile">All Movies</h1>
-    <div class="myMain-gap section is-flex is-flex-wrap-wrap is-justify-content-space-around is-align-items-center">
-        <div class="myCard p-5 is-rounded-xl">
-            <section class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
-                <h2 class="myCard-bg myCard-radius myCard-title has-text-light is-size-4 has-background-black has-text-centered px-3 is-rounded">Apocalypse Now</h2>
-                <h3 class="myCard-bg myCard-plot is-size-5 mt-5">Plot</h3>
-                <p class="myCard-bg myCard-txt  is-size-6 has-text-left">
-                    A U.S. Army officer serving in Vietnam is tasked
-                    with assassinating a renegade Special Forces Colonel
-                    who sees himself as a god.
-                </p>
-                <p class="myCard-bg myCard-radius is-size-4 my-4 px-4">User Rating: <span class="has-text-success">8.4</span></p>
-                <button type="button" id="apocalypse-now" class="my-button button is-danger is-large">Watch Now &gt;</button>
-            </section>
-        </div>
+<main class="myMain section">
+    <div class="is-flex is-justify-content-center">
+        <h2 class="myMain-title is-size-2-fullhd is-size-3-desktop is-size-4">Top War Movies</h2>
     </div>
+    <div id="data-container" class="myMain-gap section is-flex is-flex-wrap-wrap is-justify-content-space-around is-align-items-center"></div>
 </main>
 
 <footer class="myFooter align footer has-text-centered">
