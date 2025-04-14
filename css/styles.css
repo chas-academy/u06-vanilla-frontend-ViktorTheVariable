@@ -1,7 +1,7 @@
 :root {
     --pri-bg-color: #444444;
     --sec-bg-color: #000000;
-    --op-bg-color: rgba(0, 0, 0, 0.5);
+    --op-bg-color: rgba(0, 0, 0, 0.7);
     --pri-txt-color: #FFFFFF;
     --pri-btn-color: #D63537;
     --pri-btntxt-color: #000000;
@@ -11,6 +11,11 @@
 html {
     font-size: 16px;
 }
+
+.myButton:hover {
+    background-color: var(--pri-bg-color) !important;
+    color: var(--pri-btn-color);
+} 
 
 header.myHeader {
     background-image: url(../images/header.jpg);
@@ -31,6 +36,19 @@ h1.title {
 
 .myMain {
     background-color: var(--pri-bg-color) !important;
+}
+
+.myMain-title {
+    color: var(--pri-btn-color);
+    background-color: var(--sec-bg-color);
+    font-weight: 900;
+    padding: 0.2rem 2rem;
+    border-radius: 3rem;
+    text-align: center;
+}
+
+.myMain-gap {
+    gap: 3rem;
 }
 
 .myFooter {

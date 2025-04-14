@@ -1,0 +1,17 @@
+.myLogin-title {
+    color: var(--sec-btntxt-color);
+    padding: 0.5rem 1rem;
+}
+
+/* bulma classes */
+
+.input {
+    background-color: var(--op-bg-color);
+    color: var(--sec-btntxt-color);
+}
+
+input::placeholder {
+    color: var(--sec-btntxt-color) !important;
+}
+
+/* bulma classes */

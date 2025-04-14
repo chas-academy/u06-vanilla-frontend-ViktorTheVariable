@@ -9,25 +9,12 @@
     border-radius: 1rem;
 }
 
-.myMain-gap {
-    gap: 3rem;
-}
-
 .myCard-bg {
     background-color: var(--op-bg-color) !important;
 }
 
 .myCard-radius {
     border-radius: 1.5rem;
-}
-
-.myMain-title {
-    color: var(--pri-btn-color);
-    background-color: var(--sec-bg-color);
-    font-weight: 900;
-    padding: 0.2rem 2rem;
-    border-radius: 3rem;
-    text-align: center;
 }
 
 .myCard-plot {

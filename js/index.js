@@ -1,6 +1,7 @@
-fetch('https://topwarmovies.onrender.com/api/v1/warmovies')
-  .then(response => response.json())
-  .then(data => {
+async function showAllMovies() {
+  try {
+    const response = await fetch('https://topwarmovies.onrender.com/api/v1/warmovies');
+    const data = await response.json();
     const container = document.getElementById('data-container');
     data.forEach(movie => {
       const imageUrl = movie.media.imageUrl.startsWith('/')
@@ -23,14 +24,18 @@ fetch('https://topwarmovies.onrender.com/api/v1/warmovies')
           <p class="myCard-bg myCard-radius is-size-4 my-4 px-4">
             User Rating: <span class="has-text-success">${movie.imdbRating.userRating}</span>
           </p>
-          <button type="button" class="my-button button is-danger is-large">
+          <button type="button" class="myButton button is-danger is-large">
             More Details &gt;
           </button>
         </section>
       `;
-
-      // Lägg till kortet i containern
       container.appendChild(card);
     });
-  })
-  .catch(error => console.error('Error:', error));
+  } catch (error) {
+    console.error('Error:', error);
+    const container = document.getElementById('data-container');
+    container.innerHTML = '<p class="has-text-danger is-size-1 has-text-centered">No movies found</p>';
+  }
+}
+
+showAllMovies();
