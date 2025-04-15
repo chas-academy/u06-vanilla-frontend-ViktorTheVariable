@@ -17,8 +17,12 @@ html {
     color: var(--pri-btn-color);
 } 
 
+.myButton:active {
+    background-color: var(--sec-btntxt-color) !important;
+}
+
 header.myHeader {
-    background-image: url(../images/header.jpg);
+    background-image: url(../static/images/header.jpg);
     background-size: cover;
     background-position: center 70%;
     background-repeat: no-repeat;
@@ -52,7 +56,7 @@ h1.title {
 }
 
 .myFooter {
-    background-image: url(../images/footer.jpg);
+    background-image: url(../static/images/footer.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -24,7 +24,7 @@ async function showAllMovies() {
           <p class="myCard-bg myCard-radius is-size-4 my-4 px-4">
             User Rating: <span class="has-text-success">${movie.imdbRating.userRating}</span>
           </p>
-          <button type="button" class="myButton button is-danger is-large">
+          <button type="button" id="${movie._id}" class="myMain-button myButton button is-danger is-large">
             More Details &gt;
           </button>
         </section>
@@ -37,5 +37,34 @@ async function showAllMovies() {
     container.innerHTML = '<p class="has-text-danger is-size-1 has-text-centered">No movies found</p>';
   }
 }
+
+document.addEventListener('click', async function(e) {
+  if (e.target.matches('.myMain-button')) {
+    const movieId = e.target.id;
+    const token = localStorage.getItem('token');
+
+    const options = {
+      method: 'GET'
+    };
+    if (token) {
+      options.headers = {
+        'Authorization': `Bearer ${token}`
+      };
+    }
+
+    try {
+      const response = await fetch(`http://localhost:3000/api/v1/warmovies/${movieId}`, options);
+      const data = await response.json();
+
+      if (response.ok) {
+        window.location.href = `movie.html?id=${movieId}`;
+      } else {
+        alert(data.message || 'Please log in to view movie details.');
+      }
+    } catch (err) {
+      alert('Ooh noo, internal server error: try set your computer on fire and see if it works' + err.message);
+    }
+  }
+});
 
 showAllMovies();

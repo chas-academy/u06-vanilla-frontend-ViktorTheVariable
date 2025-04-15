@@ -1,3 +1,5 @@
+// used for testing purposes
+
 class FooterComponent extends HTMLElement {
     constructor() {
         super();
