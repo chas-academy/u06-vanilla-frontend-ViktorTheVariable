@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top War Movies</title>
+    <link rel="stylesheet" href="../css/bulma.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/movie.css">
+    <script src="../js/header-component.js" defer></script>
+    <script src="../js/footer-component.js" defer></script>
+    <script src="../js/global.js" defer></script>
+    <script src="../js/movie.js" defer></script>
+</head>
+<body>
+<header-component></header-component>
+
+<main class="myMain section">
+    <div class="myMain is-flex is-justify-content-center">
+        <h2 class="myMain-title is-size-2-fullhd is-size-3-desktop is-size-4">Apocalypse Now</h2>
+    </div>
+    <div class="section myMain-gap is-flex is-flex-direction-column">
+        <div id="image-container" class="myMovie-gap is-flex is-justify-content-center is-align-items-center">
+            <div class="is-128x128">
+                <img id="movie-image" src="../static/images/apocalypse_now.jpg" alt="Apocalypse Now" width="128" height="128">
+            </div>
+            <div class="myMovie-gap is-flex is-flex-direction-column is-align-items-center">
+                <p id="user-rating" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">User Rating: <span>8.4</span></p>
+                <p id="expert-rating" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">Expert Rating: <span>9.4</span></p>
+                <p id="length" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">Length:2h27m</p>
+                <p id="release-year" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">Release Year:1979</p>
+            </div>
+        </div>
+        <div id="plot-container" class="is-flex is-flex-direction-column is-align-items-center">
+            <h4 class="myPlot myPlot-title">Plot</h4>
+            <p class="myPlot myPlot-text">
+                A U.S. Army officer serving in Vietnam is tasked
+                with assassinating a renegade Special Forces
+                Colonel who sees himself as a god.
+            </p>
+        </div>
+        <div id="trailer-container" class="is-flex is-flex-direction-column is-align-items-center">
+            <h4 class="myPlot myPlot-title">Trailer</h4>
+            <iframe width="280" height="158" 
+                src="https://www.youtube.com/embed/9l-ViOOFH-s?si=0pTUl68E8fXXqjE3" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+        <div id="director-container" class="myMain-gap is-flex is-flex-direction-column is-align-items-center">
+            <p class="myDetail-text is-size-4-widescreen is-size-5-tablet is-size-6">Director: Francis Ford Coppola</p>
+            <p class="myDetail-text is-size-4-widescreen is-size-5-tablet is-size-6">WarType: Vietnam</p>
+        </div>
+        <div id="cast-container" class="myMain-gap is-flex is-flex-direction-column is-align-items-center">
+            <div id="actors-container" class="is-flex is-flex-direction-column is-align-items-center">
+                <h4 class="myPlot myPlot-title">Actors</h4>
+                <p class="myCast-text">Martin Sheen</p>
+                <p class="myCast-text">Marlon Brando</p>
+                <p class="myCast-text">Robert Duvall</p>
+            </div>
+            <div id="writers-container" class="is-flex is-flex-direction-column is-align-items-center">
+                <h4 class="myPlot myPlot-title">Writers</h4>
+                <p class="myCast-text">Francis Ford Coppola</p>
+                <p class="myCast-text">John Milius</p>
+                <p class="myCast-text">Micheal Herr</p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer-component></footer-component>
+</body>
+</html>
