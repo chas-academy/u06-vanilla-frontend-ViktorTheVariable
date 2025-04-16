@@ -1,48 +1,24 @@
-async function showAllMovies() {
+function parseJwt(token) {
     try {
-      const response = await fetch('http://localhost:3000/api/v1/warmovies');
-      const data = await response.json();
-      const container = document.getElementById('data-container');
-      data.forEach(movie => {
-        const imageUrl = movie.media.imageUrl.startsWith('/')
-          ? `http://localhost:3000${movie.media.imageUrl}`
-          : movie.media.imageUrl;
-  
-        const card = document.createElement('div');
-        card.className = 'myCard p-5 is-rounded-xl';
-        card.style.backgroundImage = `url('${imageUrl}')`;
-  
-        card.innerHTML = `
-          <section class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center">
-            <h3 class="myCard-bg myCard-radius myCard-title has-text-light is-size-4 has-background-black has-text-centered px-3 is-rounded">
-              ${movie.title}
-            </h3>
-            <h4 class="myCard-bg myCard-plot is-size-5 mt-5">Plot</h4>
-            <p class="myCard-bg myCard-txt is-size-6 has-text-left">
-              ${movie.plot}
-            </p>
-            <p class="myCard-bg myCard-radius is-size-4 my-4 px-4">
-              User Rating: <span class="has-text-success">${movie.imdbRating.userRating}</span>
-            </p>
-            <button type="button" id="${movie._id}" class="myMain-button myButton button is-danger is-large">
-              More Details &gt;
-            </button>
-          </section>
-        `;
-        container.appendChild(card);
-      });
-    } catch (error) {
-      console.error('Error:', error);
-      const container = document.getElementById('data-container');
-      container.innerHTML = '<p class="has-text-danger is-size-1 has-text-centered">Please log in to view movie details</p>';
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        return JSON.parse(jsonPayload);
+    } catch (e) {
+        return null;
     }
-  }
+}
 
   async function showMovieDetails(movieId) {
     const container = document.getElementById('data-container');
     const token = localStorage.getItem('token');
     if (token) {
         try {
+            const decoded = parseJwt(token);
+            const isAdmin = decoded && decoded.isAdmin;
+
             const response = await fetch(`http://localhost:3000/api/v1/warmovies/${movieId}`, {
                 headers: {
                   'Authorization': `Bearer ${token}`
@@ -53,6 +29,13 @@ async function showAllMovies() {
             const imageUrl = data.media.imageUrl.startsWith('/')
                 ? `http://localhost:3000${data.media.imageUrl}`
                 : data.media.imageUrl;
+
+            const adminButtons = isAdmin ? `
+            <div id="admin-container" class="myMain-gap is-flex is-flex-direction-column is-align-items-center">
+                <a href="update-movie.html?id=${movieId}" id="update-movie" class="has-background-warning button is-large is-responsive">Update Movie</a>
+                <button type="button" id="${movieId}" class="delete-movie-btn has-background-danger button is-large is-responsive">Delete Movie</button>
+            </div>
+        ` : '';
 
             container.innerHTML = `
                 <div class="myMain is-flex is-justify-content-center">
@@ -118,10 +101,7 @@ async function showAllMovies() {
                                 ).join('')}
                             </div>
                         </div>
-                        <div id="admin-container" class="myMain-gap is-flex is-flex-direction-column is-align-items-center">
-                            <a href="update-movie.html" id="update-movie" class="has-background-warning button is-large is-responsive">Update Movie</a>
-                            <a href="index.html" id="delete-movie" class="has-background-danger button is-large is-responsive">Delete Movie</a>
-                        </div>
+                        ${adminButtons}
                     </div>
                 </div>
             `;
