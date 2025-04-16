@@ -122,3 +122,38 @@ if (movieId) {
 else {
     document.getElementById('data-container').innerHTML = '<p class="has-text-danger is-size-1 has-text-centered">Please go back to "home" and choose a movie.</p>';
 }
+
+document.addEventListener('click', async function(e) {
+    if (e.target.matches('.delete-movie-btn')) {
+      const movieId = e.target.id;
+      const token = localStorage.getItem('token');
+  
+      if (!movieId || !token) {
+        alert('Missing movie ID or not logged in.');
+        return;
+      }
+  
+      if (!confirm('Are you sure you want to delete this movie?')) {
+        return;
+      }
+  
+      try {
+        const response = await fetch(`http://localhost:3000/api/v1/warmovies/${movieId}`, {
+          method: 'DELETE',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        const data = await response.json();
+  
+        if (response.ok) {
+          alert('Movie deleted successfully');
+          window.location.href = 'index.html';
+        } else {
+          alert('Failed to delete movie: ' + (data.message || 'Please log in as admin to delete movie.'));
+        }
+      } catch (error) {
+        alert('Error deleting movie: ' + error.message);
+      }
+    }
+  });
