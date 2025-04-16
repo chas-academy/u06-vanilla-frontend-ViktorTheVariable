@@ -1,11 +1,11 @@
 async function showAllMovies() {
   try {
-    const response = await fetch('https://topwarmovies.onrender.com/api/v1/warmovies');
+    const response = await fetch('http://localhost:3000/api/v1/warmovies');
     const data = await response.json();
     const container = document.getElementById('data-container');
     data.forEach(movie => {
       const imageUrl = movie.media.imageUrl.startsWith('/')
-        ? `https://topwarmovies.onrender.com${movie.media.imageUrl}`
+        ? `http://localhost:3000${movie.media.imageUrl}`
         : movie.media.imageUrl;
 
       const card = document.createElement('div');
