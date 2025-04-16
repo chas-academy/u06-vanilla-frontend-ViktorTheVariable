@@ -19,55 +19,72 @@
     <div class="myMain is-flex is-justify-content-center">
         <h2 class="myMain-title is-size-2-fullhd is-size-3-desktop is-size-4">Apocalypse Now</h2>
     </div>
-    <div class="section myMain-gap is-flex is-flex-direction-column">
-        <div id="image-container" class="myMovie-gap is-flex is-justify-content-center is-align-items-center">
-            <div class="is-128x128">
-                <img id="movie-image" src="../static/images/apocalypse_now.jpg" alt="Apocalypse Now" width="128" height="128">
+    <div class="fixed-grid has-1-cols has-2-cols-tablet has-3-cols-widescreen section">
+        <div class="myMain-gap grid">
+            <div id="image-container" class="myMovie-gap is-flex is-justify-content-center is-align-items-center">
+                <div class="is-128x128">
+                    <img id="movie-image" src="../static/images/apocalypse_now.jpg" alt="Apocalypse Now" width="128" height="128">
+                </div>
+                <div class="myMovie-gap is-flex is-flex-direction-column is-align-items-center">
+                    <p id="user-rating" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">User Rating: <span>8.4</span></p>
+                    <p id="expert-rating" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">Expert Rating: <span>9.4</span></p>
+                    <p id="length" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">Length: <span>2h27m</span></p>
+                    <p id="release-year" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">Release Year: <span>1979</span></p>
+                </div>
             </div>
-            <div class="myMovie-gap is-flex is-flex-direction-column is-align-items-center">
-                <p id="user-rating" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">User Rating: <span>8.4</span></p>
-                <p id="expert-rating" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">Expert Rating: <span>9.4</span></p>
-                <p id="length" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">Length:2h27m</p>
-                <p id="release-year" class="myDetail-text is-size-5-widescreen is-size-6-tablet is-size-7">Release Year:1979</p>
+            <div id="plot-container" class="is-flex is-flex-direction-column is-align-items-center">
+                <h4 class="myPlot myPlot-title is-size-4-tablet is-size-5">Plot</h4>
+                <p class="myPlot myPlot-text is-size-5-tablet is-size-6">
+                    A U.S. Army officer serving in Vietnam is tasked
+                    with assassinating a renegade Special Forces
+                    Colonel who sees himself as a god.
+                </p>
             </div>
-        </div>
-        <div id="plot-container" class="is-flex is-flex-direction-column is-align-items-center">
-            <h4 class="myPlot myPlot-title">Plot</h4>
-            <p class="myPlot myPlot-text">
-                A U.S. Army officer serving in Vietnam is tasked
-                with assassinating a renegade Special Forces
-                Colonel who sees himself as a god.
-            </p>
-        </div>
-        <div id="trailer-container" class="is-flex is-flex-direction-column is-align-items-center">
-            <h4 class="myPlot myPlot-title">Trailer</h4>
-            <iframe width="280" height="158" 
-                src="https://www.youtube.com/embed/9l-ViOOFH-s?si=0pTUl68E8fXXqjE3" 
-                title="YouTube video player" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-        </div>
-        <div id="director-container" class="myMain-gap is-flex is-flex-direction-column is-align-items-center">
-            <p class="myDetail-text is-size-4-widescreen is-size-5-tablet is-size-6">Director: Francis Ford Coppola</p>
-            <p class="myDetail-text is-size-4-widescreen is-size-5-tablet is-size-6">WarType: Vietnam</p>
-        </div>
-        <div id="cast-container" class="myMain-gap is-flex is-flex-direction-column is-align-items-center">
-            <div id="actors-container" class="is-flex is-flex-direction-column is-align-items-center">
-                <h4 class="myPlot myPlot-title">Actors</h4>
-                <p class="myCast-text">Martin Sheen</p>
-                <p class="myCast-text">Marlon Brando</p>
-                <p class="myCast-text">Robert Duvall</p>
+            <div id="trailer-container" class="is-flex is-flex-direction-column is-align-items-center">
+                <h4 class="myPlot myPlot-title is-size-4-tablet is-size-5">Trailer</h4>
+                <iframe width="280" height="158" 
+                    src="https://www.youtube.com/embed/9l-ViOOFH-s?si=0pTUl68E8fXXqjE3" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
             </div>
-            <div id="writers-container" class="is-flex is-flex-direction-column is-align-items-center">
-                <h4 class="myPlot myPlot-title">Writers</h4>
-                <p class="myCast-text">Francis Ford Coppola</p>
-                <p class="myCast-text">John Milius</p>
-                <p class="myCast-text">Micheal Herr</p>
+            <div id="director-container" class="myMain-gap is-flex is-flex-direction-column is-align-items-center">
+                <p class="myDetail-text is-size-4-fullhd is-size-5-tablet is-size-6">Director: Francis Ford Coppola</p>
+                <p class="myDetail-text is-size-4-fullhd is-size-5-tablet is-size-6">WarType: Vietnam</p>
+            </div>
+            <div id="cast-container" class="myMain-gap is-flex is-flex-direction-column is-align-items-center">
+                <div id="actors-container" class="is-flex is-flex-direction-column is-align-items-center">
+                    <h4 class="myPlot myPlot-title is-size-4-tablet is-size-5">Actors</h4>
+                    <p class="myCast-text is-size-4-tablet is-size-5">Martin Sheen</p>
+                    <p class="myCast-text is-size-4-tablet is-size-5">Marlon Brando</p>
+                    <p class="myCast-text is-size-4-tablet is-size-5">Robert Duvall</p>
+                </div>
+                <div id="writers-container" class="is-flex is-flex-direction-column is-align-items-center">
+                    <h4 class="myPlot myPlot-title is-size-4-tablet is-size-5">Writers</h4>
+                    <p class="myCast-text is-size-4-tablet is-size-5">Francis Ford Coppola</p>
+                    <p class="myCast-text is-size-4-tablet is-size-5">John Milius</p>
+                    <p class="myCast-text is-size-4-tablet is-size-5">Micheal Herr</p>
+                </div>
+            </div>
+            <div id="production-container" class="myMain-gap is-flex is-flex-direction-column is-align-items-center">
+                <div id="contry-container" class="is-flex is-flex-direction-column is-align-items-center">
+                    <h4 class="myPlot myPlot-title is-size-4-tablet is-size-5">Filming Locations</h4>
+                    <p class="myCast-text is-size-4-tablet is-size-5">Philippines</p>
+                    <p class="myCast-text is-size-4-tablet is-size-5">USA</p>
+                </div>
+                <div id="language-container" class="is-flex is-flex-direction-column is-align-items-center">
+                    <h4 class="myPlot myPlot-title is-size-4-tablet is-size-5">Spoken Languages</h4>
+                    <p class="myCast-text is-size-4-tablet is-size-5">English</p>
+                    <p class="myCast-text is-size-4-tablet is-size-5">Filipino</p>
+                </div>
+            </div>
+            <div id="admin-container" class="myMain-gap is-flex is-flex-direction-column is-align-items-center">
+                <a href="update-movie.html" id="update-movie" class="has-background-warning button is-large is-responsive">Update Movie</a>
+                <a href="index.html" id="delete-movie" class="has-background-danger button is-large is-responsive">Delete Movie</a>
             </div>
         </div>
     </div>
-
 </main>
 
 <footer-component></footer-component>
