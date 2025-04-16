@@ -1,16 +1,3 @@
-function parseJwt(token) {
-    try {
-        const base64Url = token.split('.')[1];
-        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-        return JSON.parse(jsonPayload);
-    } catch (e) {
-        return null;
-    }
-}
-
   async function showMovieDetails(movieId) {
     const container = document.getElementById('data-container');
     const token = localStorage.getItem('token');
@@ -112,9 +99,6 @@ function parseJwt(token) {
         container.innerHTML = '<p class="has-text-danger is-size-1 has-text-centered">Please log in to watch movie details</p>';
     }
 }
-
-const params = new URLSearchParams(window.location.search);
-const movieId = params.get('id');
 
 if (movieId) {
     showMovieDetails(movieId);
