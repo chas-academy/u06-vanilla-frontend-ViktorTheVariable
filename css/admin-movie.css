@@ -10,4 +10,10 @@
     color: var(--sec-btntxt-color) !important;
 }
 
+.help {
+    color: var(--pri-btn-color) !important;
+    font-size: 1.2rem;
+    display: none
+}
+
 /* bulma classes */
