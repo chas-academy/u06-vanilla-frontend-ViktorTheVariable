@@ -1,0 +1,13 @@
+.myInput {
+    width: 300px !important;
+    background-color: var(--op-bg-color) !important;
+    color: var(--sec-btntxt-color) !important;
+}
+
+/* bulma classes */
+
+.textarea::placeholder {
+    color: var(--sec-btntxt-color) !important;
+}
+
+/* bulma classes */

@@ -21,6 +21,15 @@ html {
     background-color: var(--sec-btntxt-color) !important;
 }
 
+.mySec-btn:hover {
+    background-color: var(--pri-btntxt-color) !important;
+    color: var(--pri-btn-color);
+}
+
+.mySec-btn:active {
+    background-color: var(--sec-btntxt-color) !important;
+}
+
 header.myHeader {
     background-image: url(../static/images/header.jpg);
     background-size: cover;
@@ -86,6 +95,15 @@ h1.title {
 
 .is-danger {
     background-color: var(--pri-btn-color) !important;
+}
+
+.input {
+    background-color: var(--op-bg-color);
+    color: var(--sec-btntxt-color);
+}
+
+input::placeholder {
+    color: var(--sec-btntxt-color) !important;
 }
 
 .footer {
