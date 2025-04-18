@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top War Movies</title>
+    <link rel="stylesheet" href="../css/bulma.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/admin-movie.css">
+    <script src="../js/header-component.js" defer></script>
+    <script src="../js/footer-component.js" defer></script>
+    <script src="../js/global.js" defer></script>
+    <script src="../js/update-movie.js" defer></script>
+</head>
+<body>
+<header-component></header-component>
+
+<main id="admin-container" class="myMain section">
+    <div id="movie-title-header" class="is-flex is-justify-content-center">
+
+    </div>
+    <form method="post" id="create-form" class="create-form">
+        <div class="columns is-multiline is-mobile section">
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Movie Title (required)</label>
+              <div class="control">
+                <input id="movie-title" class="myInput input is-size-4-fullhd is-size-5-desktop is-size-6 required" 
+                       type="text" placeholder="Title" maxlength="30" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Director</label>
+              <div class="control">
+                <input id="movie-director" class="myInput input is-size-4-fullhd is-size-5-desktop is-size-6" 
+                       type="text" placeholder="Full Name" maxlength="30" pattern="^[A-Za-zÅÄÖåäö]+\s+[A-Za-zÅÄÖåäö]+.*$">
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Movie length</label>
+              <div class="control">
+                <input id="movie-length" class="myInput input is-size-4-fullhd is-size-5-desktop is-size-6" 
+                       type="text" placeholder="xhxxm" pattern="^\d[A-Za-z]\d{2}[A-Za-z]$" maxlength="5">
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Movie Description</label>
+              <div class="control">
+                <textarea id="movie-description" class="myInput textarea has-fixed-size is-size-4-fullhd is-size-5-desktop is-size-6" 
+                          placeholder="Write movie Plot" rows="3" maxlength="255"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Release Year</label>
+              <div class="control">
+                <input id="movie-year" class="myInput input is-size-4-fullhd is-size-5-desktop is-size-6" 
+                       type="text" placeholder="xxxx" pattern="\d{4}" maxlength="4">
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">War Type</label>
+              <div class="control">
+                <input id="movie-war" class="myInput input is-size-4-fullhd is-size-5-desktop is-size-6" 
+                       type="text" placeholder="ex. Second World War" maxlength="25">
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Image URL</label>
+              <div class="control">
+                <input id="movie-image" class="myInput input is-size-4-fullhd is-size-5-desktop is-size-6" 
+                       type="text" placeholder="ex. https://example.com/image.jpg" maxlength="255">
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Movie URL</label>
+              <div class="control">
+                <input id="movie-trailer" class="myInput input is-size-4-fullhd is-size-5-desktop is-size-6" 
+                       type="text" placeholder="ex. https://example.com/trailer.mp4" maxlength="255">
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Actors (Cast)</label>
+              <div class="control">
+                <textarea 
+                  id="movie-actors" 
+                  class="myInput textarea has-fixed-size is-size-4-fullhd is-size-5-desktop is-size-6" 
+                  placeholder="ex. Full Name, Full Name, Full Name, ..." 
+                  rows="2" 
+                  maxlength="255"></textarea>
+                <p class="help is-warning error-message"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Script Writers</label>
+              <div class="control">
+                <textarea 
+                  id="movie-writers" 
+                  class="myInput textarea has-fixed-size is-size-4-fullhd is-size-5-desktop is-size-6" 
+                  placeholder="ex. Full Name, Full Name, Full Name, ..." 
+                  rows="2" 
+                  maxlength="255"></textarea>
+                <p class="help is-warning error-message"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Filming Location</label>
+              <div class="control">
+                <textarea 
+                  id="movie-country" 
+                  class="myInput textarea has-fixed-size is-size-4-fullhd is-size-5-desktop is-size-6" 
+                  placeholder="ex. Country, Country, Country, ..." 
+                  rows="2" 
+                  maxlength="255"></textarea>
+                <p class="help is-warning error-message"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Spoken Languages</label>
+              <div class="control">
+                <textarea 
+                  id="movie-language" 
+                  class="myInput textarea has-fixed-size is-size-4-fullhd is-size-5-desktop is-size-6" 
+                  placeholder="ex. Language, Language, Language, ..." 
+                  rows="2" 
+                  maxlength="255"></textarea>
+                  <p class="help is-warning error-message"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">User Rating</label>
+              <div class="control">
+                <input id="movie-user" class="myInput input is-size-4-fullhd is-size-5-desktop is-size-6" 
+                       type="text" placeholder="ex. 8.5" pattern="^\d{1,2}\.\d$" maxlength="4">
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Expert Rating</label>
+              <div class="control">
+                <input id="movie-expert" class="myInput input is-size-4-fullhd is-size-5-desktop is-size-6" 
+                       type="text" placeholder="ex. 8.5" pattern="^\d{1,2}\.\d$" maxlength="4">
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12 has-text-centered mt-5">
+            <button type="submit" class="mySec-btn button is-success is-large is-responsive">Create Movie</button>
+          </div>
+
+        </div>
+      </form>
+</main>
+
+<footer-component></footer-component>
+</body>
+</html>
