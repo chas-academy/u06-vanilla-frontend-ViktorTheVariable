@@ -16,6 +16,7 @@
       if (response.ok) {
         alert('Login successful!');
         localStorage.setItem('token', data.token);
+        window.location.href = 'index.html';
       } else {
         alert(data.message || 'Wrong username or password.');
       }

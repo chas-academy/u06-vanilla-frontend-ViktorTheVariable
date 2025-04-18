@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Success:', responseData);
       alert('Movie created successfully!');
       form.reset();
+      window.location.href = 'index.html';
 
     } catch (error) {
       console.error('Fetch error:', error);
