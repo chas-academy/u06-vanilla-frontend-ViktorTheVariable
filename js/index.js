@@ -1,5 +1,21 @@
 async function showAllMovies() {
   try {
+    const adminContainer = document.getElementById('admin-container');
+    adminContainer.innerHTML = '';
+    
+    const token = localStorage.getItem('token');
+    if (token) {
+      const decoded = parseJwt(token);
+      const isAdmin = decoded && decoded.isAdmin;
+      if (isAdmin) {
+        adminContainer.innerHTML = `
+          <a href="create-movie.html" id="add-movie" class="has-background-success button is-large is-responsive mt-6 mb-4">
+            Create New Movie
+          </a>
+        `;
+      }
+    }
+
     const response = await fetch('http://localhost:3000/api/v1/warmovies');
     const data = await response.json();
     const container = document.getElementById('data-container');

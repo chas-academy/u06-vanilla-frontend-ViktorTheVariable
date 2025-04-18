@@ -2,25 +2,3 @@
     color: var(--sec-btntxt-color);
     padding: 0.5rem 1rem;
 }
-
-.mySec-btn:hover {
-    background-color: var(--pri-btntxt-color) !important;
-    color: var(--pri-btn-color);
-}
-
-.mySec-btn:active {
-    background-color: var(--sec-btntxt-color) !important;
-}
-
-/* bulma classes */
-
-.input {
-    background-color: var(--op-bg-color);
-    color: var(--sec-btntxt-color);
-}
-
-input::placeholder {
-    color: var(--sec-btntxt-color) !important;
-}
-
-/* bulma classes */
