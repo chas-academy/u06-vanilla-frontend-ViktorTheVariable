@@ -15,7 +15,7 @@
 <body>
 <header-component></header-component>
 
-<main class="myMain section">
+<main id="admin-container" class="myMain section">
     <div class="is-flex is-justify-content-center">
         <h2 class="myMain-title is-size-2-fullhd is-size-3-desktop is-size-4">Create New Movie</h2>
     </div>
@@ -161,9 +161,31 @@
               </div>
             </div>
           </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">User Rating</label>
+              <div class="control">
+                <input id="movie-user" class="myInput input is-size-4-fullhd is-size-5-desktop is-size-6" 
+                       type="text" placeholder="ex. 8.5" pattern="^\d{1,2}\.\d$" maxlength="4">
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-12-mobile is-6-tablet is-4-widescreen is-3-fullhd is-flex is-justify-content-center">
+            <div class="field">
+              <label class="label has-text-white is-size-4-fullhd is-size-5-desktop is-size-6">Expert Rating</label>
+              <div class="control">
+                <input id="movie-expert" class="myInput input is-size-4-fullhd is-size-5-desktop is-size-6" 
+                       type="text" placeholder="ex. 8.5" pattern="^\d{1,2}\.\d$" maxlength="4">
+              </div>
+            </div>
+          </div>
+
           <div class="column is-12 has-text-centered mt-5">
             <button type="submit" class="mySec-btn button is-success is-large is-responsive">Create Movie</button>
           </div>
+
         </div>
       </form>
 </main>
