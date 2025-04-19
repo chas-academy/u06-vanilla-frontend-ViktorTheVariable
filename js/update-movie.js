@@ -94,7 +94,7 @@
         console.log('Success:', responseData);
         alert('Movie updated successfully!');
         form.reset();
-        window.location.href = 'index.html';
+        window.location.href = '/index.html';
   
       } catch (error) {
         console.error('Fetch error:', error);

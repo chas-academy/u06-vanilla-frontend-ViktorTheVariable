@@ -9,7 +9,7 @@ async function showAllMovies() {
       const isAdmin = decoded && decoded.isAdmin;
       if (isAdmin) {
         adminContainer.innerHTML = `
-          <a href="create-movie.html" id="add-movie" class="has-background-success button is-large is-responsive mt-6 mb-4">
+          <a href="html/create-movie.html" id="add-movie" class="has-background-success button is-large is-responsive mt-6 mb-4">
             Create New Movie
           </a>
         `;
@@ -73,7 +73,7 @@ document.addEventListener('click', async function(e) {
       const data = await response.json();
 
       if (response.ok) {
-        window.location.href = `movie.html?id=${movieId}`;
+        window.location.href = `html/movie.html?id=${movieId}`;
       } else {
         alert(data.message || 'Please log in to view movie details.');
       }

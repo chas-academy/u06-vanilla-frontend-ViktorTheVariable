@@ -132,7 +132,7 @@ document.addEventListener('click', async function(e) {
   
         if (response.ok) {
           alert('Movie deleted successfully');
-          window.location.href = 'index.html';
+          window.location.href = '/index.html';
         } else {
           alert('Failed to delete movie: ' + (data.message || 'Please log in as admin to delete movie.'));
         }
