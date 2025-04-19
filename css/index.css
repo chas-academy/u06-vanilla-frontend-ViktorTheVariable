@@ -1,5 +1,5 @@
 .myCard {
-    background-image: url(../images/card.jpg);
+    background-image: url(/static/images/card.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
