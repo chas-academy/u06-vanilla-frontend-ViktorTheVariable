@@ -1,5 +1,0 @@
-# _redirects
-/css/*       /css/:splat       200
-/js/*        /js/:splat        200
-/static/*    /static/:splat    200
-/*           /html/index.html  200
