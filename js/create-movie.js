@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/api/v1/warmovies', {
+      const response = await fetch('https://topwarmovies.onrender.com/api/v1/warmovies', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

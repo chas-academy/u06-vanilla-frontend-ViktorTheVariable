@@ -6,7 +6,7 @@
             const decoded = parseJwt(token);
             const isAdmin = decoded && decoded.isAdmin;
 
-            const response = await fetch(`http://localhost:3000/api/v1/warmovies/${movieId}`, {
+            const response = await fetch(`https://topwarmovies.onrender.com/api/v1/warmovies/${movieId}`, {
                 headers: {
                   'Authorization': `Bearer ${token}`
                 }
@@ -14,7 +14,7 @@
             const data = await response.json();
 
             const imageUrl = data.media.imageUrl.startsWith('/')
-                ? `http://localhost:3000${data.media.imageUrl}`
+                ? `https://topwarmovies.onrender.com${data.media.imageUrl}`
                 : data.media.imageUrl;
 
             const adminButtons = isAdmin ? `
@@ -122,7 +122,7 @@ document.addEventListener('click', async function(e) {
       }
   
       try {
-        const response = await fetch(`http://localhost:3000/api/v1/warmovies/${movieId}`, {
+        const response = await fetch(`https://topwarmovies.onrender.com/api/v1/warmovies/${movieId}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`

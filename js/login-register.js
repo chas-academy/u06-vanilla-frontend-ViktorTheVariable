@@ -5,7 +5,7 @@
     const password = document.getElementById('login-password').value;
   
     try {
-      const response = await fetch('http://localhost:3000/api/v1/auth/login', {
+      const response = await fetch('https://topwarmovies.onrender.com/api/v1//auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -30,9 +30,21 @@
   
     const username = document.getElementById('register-username').value;
     const password = document.getElementById('register-password').value;
+    const passwordInput = document.getElementById('register-password');
+    
+    if (!username || !password) {
+        alert('Username and password are required!');
+        return;
+    }
+
+    if (password.length < 8) {
+        alert('Password must be at least 8 characters long!');
+        passwordInput.focus();
+        return;
+    }
   
     try {
-      const response = await fetch('http://localhost:3000/api/v1/auth/register', {
+      const response = await fetch('https://topwarmovies.onrender.com/api/v1//auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -42,6 +54,7 @@
   
       if (response.ok) {
         alert('Registration successful!');
+        window.location.href = 'login-register.html'; 
       } else {
         alert(data.message || 'Registration failed.');
       }

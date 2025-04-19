@@ -75,7 +75,7 @@
       };
   
       try {
-        const response = await fetch(`http://localhost:3000/api/v1/warmovies/${movieId}`, {
+        const response = await fetch(`https://topwarmovies.onrender.com/api/v1/warmovies/${movieId}`, {
             method: 'PUT',  // eller PATCH beroende på API
             headers: {
               'Content-Type': 'application/json',
@@ -104,7 +104,7 @@
 
     const populateForm = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/api/v1/warmovies/${movieId}`, {
+            const response = await fetch(`https://topwarmovies.onrender.com/api/v1/warmovies/${movieId}`, {
                 headers: {
                   'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }

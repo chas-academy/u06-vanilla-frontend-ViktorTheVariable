@@ -16,12 +16,12 @@ async function showAllMovies() {
       }
     }
 
-    const response = await fetch('http://localhost:3000/api/v1/warmovies');
+    const response = await fetch('https://topwarmovies.onrender.com/api/v1/warmovies');
     const data = await response.json();
     const container = document.getElementById('data-container');
     data.forEach(movie => {
       const imageUrl = movie.media.imageUrl.startsWith('/')
-        ? `http://localhost:3000${movie.media.imageUrl}`
+        ? `https://topwarmovies.onrender.com${movie.media.imageUrl}`
         : movie.media.imageUrl;
 
       const card = document.createElement('div');
@@ -69,7 +69,7 @@ document.addEventListener('click', async function(e) {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/api/v1/warmovies/${movieId}`, options);
+      const response = await fetch(`https://topwarmovies.onrender.com/api/v1/warmovies/${movieId}`, options);
       const data = await response.json();
 
       if (response.ok) {
