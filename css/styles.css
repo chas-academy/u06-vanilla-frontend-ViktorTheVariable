@@ -1,0 +1,117 @@
+:root {
+    --pri-bg-color: #444444;
+    --sec-bg-color: #000000;
+    --op-bg-color: rgba(0, 0, 0, 0.7);
+    --pri-txt-color: #FFFFFF;
+    --pri-btn-color: #D63537;
+    --pri-btntxt-color: #000000;
+    --sec-btntxt-color: #FFFFFF;
+}
+
+html {
+    font-size: 16px;
+}
+
+.myButton:hover {
+    background-color: var(--pri-bg-color) !important;
+    color: var(--pri-btn-color);
+} 
+
+.myButton:active {
+    background-color: var(--sec-btntxt-color) !important;
+}
+
+.mySec-btn:hover {
+    background-color: var(--pri-btntxt-color) !important;
+    color: var(--pri-btn-color);
+}
+
+.mySec-btn:active {
+    background-color: var(--sec-btntxt-color) !important;
+}
+
+header.myHeader {
+    background-image: url(../static/images/header.jpg);
+    background-size: cover;
+    background-position: center 70%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1.title {
+    margin: 0;
+    font-family: Rockwell, sans-serif;
+    color: var(--pri-btn-color);
+    font-weight: 900;
+}
+
+.myMain {
+    background-color: var(--pri-bg-color) !important;
+}
+
+.myMain-title {
+    color: var(--pri-btn-color);
+    background-color: var(--sec-bg-color);
+    font-weight: 900;
+    padding: 0.2rem 2rem;
+    border-radius: 3rem;
+    text-align: center;
+}
+
+.myMain-gap {
+    gap: 3rem;
+}
+
+.myFooter {
+    background-image: url(../static/images/footer.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* bulma classes */
+
+.subtitle {
+    display: inline-block;
+    font-family: Rockwell, sans-serif;
+    color: var(--pri-txt-color);
+    background-color: var(--op-bg-color);
+    margin: 0.5rem 0;
+    padding: 0.3rem 0.5rem;
+}
+
+.is-primary {
+    background-color: var(--pri-btn-color);
+    color: var(--pri-txt-color);
+    border-radius: 6rem;
+    padding: 0.3rem 1rem;
+}
+
+.is-danger {
+    background-color: var(--pri-btn-color) !important;
+}
+
+.input {
+    background-color: var(--op-bg-color);
+    color: var(--sec-btntxt-color);
+}
+
+input::placeholder {
+    color: var(--sec-btntxt-color) !important;
+}
+
+.footer {
+    padding: 3rem 1.5rem 3rem;
+}
+
+.has-text-primary {
+    color: #ffffff !important;
+}
+
+/* bulma classes */

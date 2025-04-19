@@ -1,0 +1,33 @@
+.myDetail-text {
+    border-radius: 3rem;
+    padding: 0.1rem 0.5rem;
+    background-color: var(--sec-bg-color);
+    color: var(--sec-btntxt-color);
+}
+
+.myMovie-gap {
+    gap: 0.7rem;
+}
+
+.myPlot {
+    background-color: var(--sec-bg-color);
+    color: var(--sec-btntxt-color);
+}
+
+.myPlot-title {
+    padding: 0.1rem 0.5rem;
+    border-left: 1px solid var(--sec-btntxt-color);
+    border-right: 1px solid var(--sec-btntxt-color);
+    border-top: 1px solid var(--sec-btntxt-color);
+}
+
+.myPlot-text {
+    padding: 0.1rem 0.5rem;
+    border-left: 1px solid var(--sec-btntxt-color);
+    border-right: 1px solid var(--sec-btntxt-color);
+    border-bottom: 1px solid var(--sec-btntxt-color);
+}
+
+.myCast-text {
+    color: var(--sec-btntxt-color);
+}

@@ -1,0 +1,38 @@
+.myCard {
+    background-image: url(../images/card.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--pri-txt-color);
+    max-width: 320px;
+    border: 2px solid var(--pri-btn-color);
+    border-radius: 1rem;
+}
+
+.myCard-bg {
+    background-color: var(--op-bg-color) !important;
+}
+
+.myCard-radius {
+    border-radius: 1.5rem;
+}
+
+.myCard-plot {
+    border-left: 1px solid var(--sec-btntxt-color);
+    border-right: 1px solid var(--sec-btntxt-color);
+    border-top: 1px solid var(--sec-btntxt-color);
+}
+
+.myCard-txt {
+    border-left: 1px solid var(--sec-btntxt-color);
+    border-right: 1px solid var(--sec-btntxt-color);
+    border-bottom: 1px solid var(--sec-btntxt-color);
+}
+
+/* bulma classes */
+
+.card {
+    max-width: 360px;
+}
+
+/* bulma classes */
